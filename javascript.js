@@ -1,7 +1,10 @@
 const grid = document.querySelector(".grid-container");
-let currSize = 100; //for now
+let currSize = 50; //for now
 
 function createGrid(size){ //size is width/height of each box
+    if(size>100){
+        size = 100; //default max size
+    }
     grid.innerHTML = ""; //clear grid
     const padding = ((500/size)/2) - 0.5;
     //500 is height and width of container, later create var. 
@@ -23,5 +26,13 @@ function createGrid(size){ //size is width/height of each box
         }
     }
 }
+
+function clearGrid(){
+    const gridBoxes = document.querySelectorAll(".grid-square");
+    gridBoxes.forEach((box) => {box.style.backgroundColor = "white";});
+}
+
+const clearBtn = document.querySelector(".clear-btn");
+clearBtn.addEventListener("click", clearGrid)
 
 createGrid(currSize);
