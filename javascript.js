@@ -1,9 +1,12 @@
 const grid = document.querySelector(".grid-container");
-let currSize = 10; //for now
+let currSize = 100; //for now
 
-function createGrid(size){
+function createGrid(size){ //size is width/height of each box
     grid.innerHTML = ""; //clear grid
-    const padding = (500/size)/2; //500 is height and width of container, later create var. 
+    const padding = ((500/size)/2) - 0.5;
+    //500 is height and width of container, later create var. 
+    //0.5 is border of each box
+
     const paddingStr = padding + "px";
 
     for (let i=0; i<size; i++){
