@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container{
+    width: 500px;
+    height: 500px;
+    border: 30px solid rgb(124, 219, 251);
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container:hover{
+    cursor: pointer;
+}
+
+.grid-square{
+    border: 0.5px solid black;
+    background-color:white;
+}
+
+.row-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
