@@ -30,8 +30,18 @@ body{
 .body-container{
     display: flex;
     justify-content: center;
-    margin: 30px;
+    margin: 50px 20px;
     flex-wrap: wrap;
+}
+
+.footer{
+    height: 50px;
+    background-color: #5e5e5e;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Fira Sans", sans-serif;
+    color: black;
 }
 
 /*grid things:*/
