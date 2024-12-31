@@ -1,19 +1,13 @@
-const grid = document.querySelector(".grid-container");
-let currSize = 20; //default
-let colour = "black"; //default
-let rainbowMode = false; //default
-
 function createGrid(){ //size is width/height of each box
     if(currSize>100){
         currSize = 100; //default max size
     }
-
     sizeText.textContent = currSize + " x " + currSize;
 
     grid.innerHTML = ""; //clear grid
     const padding = ((500/currSize)/2) - 0.5;
-    //500 is height and width of container, later create var. 
-    //0.5 is border of each box
+    //500 is height and width of container (in css)
+    //0.5 is border width of each box (in css)
 
     const paddingStr = padding + "px";
 
@@ -84,6 +78,8 @@ function changeSize(){
 }
 
 function switchToRainbow(){
+    rainbowMode = true;
+
     rainbowBtn.style.color = "#5e5e5e";
     rainbowBtn.style.backgroundColor = "#CF9FFF";
 
@@ -91,9 +87,12 @@ function switchToRainbow(){
     eraserBtn.style.backgroundColor = "#5e5e5e";
     colourBtn.style.color = "#CF9FFF";
     colourBtn.style.backgroundColor = "#5e5e5e";
-
-    rainbowMode = true;
 }
+
+const grid = document.querySelector(".grid-container");
+let currSize = 20; //default
+let colour = "black"; //default
+let rainbowMode = false; //default
 
 const clearBtn = document.querySelector(".clear-btn");
 clearBtn.addEventListener("click", clearGrid)
@@ -112,6 +111,6 @@ sizePicker.addEventListener("input", changeSize);
 const sizeText = document.querySelector(".slider-value");
 
 const rainbowBtn = document.querySelector(".rainbow-btn");
-rainbowBtn.addEventListener("click", switchToRainbow)
+rainbowBtn.addEventListener("click", switchToRainbow);
 
 createGrid(currSize);

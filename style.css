@@ -150,18 +150,18 @@ button{
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb{
     -webkit-appearance: none; /* Override default look */
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
-    background: #CF9FFF; /* Green background */
+    width: 20px; 
+    height: 20px; 
+    background: #CF9FFF; 
     border-radius: 50%;
     cursor: pointer; /* Cursor on hover */
 }
 .slider::-moz-range-thumb{
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
-    background: #CF9FFF; /* Green background */
+    width: 20px; 
+    height: 20px; 
+    background: #CF9FFF; 
     border-radius: 50%;
-    cursor: pointer; /* Cursor on hover */
+    cursor: pointer; 
 }
 
 .slider-title, .slider-value{
