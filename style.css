@@ -39,6 +39,7 @@ body{
     height: 500px;
     border: 30px solid #CF9FFF;
     box-shadow: 4px 4px 10px #898989;
+    border-radius: 4px;
 
     display:flex;
     flex-wrap: wrap;
@@ -65,7 +66,6 @@ body{
 
 .sidebar{
     background-color: #5e5e5e;
-    box-shadow: 4px 4px 10px #898989;
     border-radius: 5px;
     margin: 40px;
     padding: 20px;
@@ -77,10 +77,10 @@ body{
     max-width: 200px;
 }
 
-button:hover{
+button:hover,
+input[type='color']:hover{
     cursor: pointer;
-    background-color: #CF9FFF;
-    color: #5e5e5e;
+    transform: scale(1.05); /*box expands a little*/
 }
 
 button{
