@@ -108,25 +108,73 @@ button{
 
 .pencolour-text{
     color: #CF9FFF;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Fira Sans", sans-serif;
-    margin: 10px 10px;
+    margin: 10px;
 }
 
 .pencolour-box{
-    height: 25px;
-    width: 50px;
+    height: 30px;
+    width: 65px;
     outline: none;
     overflow: hidden;
-    border: 0.5px solid white;
+    border: 1px solid white;
     border-radius: 2px;
     cursor: pointer;
+}
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    width: 160px;
+    height: 10px;
+    border-radius: 4px;
+    background-color: #363636;
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: #CF9FFF; /* Green background */
+    border-radius: 50%;
+    cursor: pointer; /* Cursor on hover */
+}
+.slider::-moz-range-thumb{
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: #CF9FFF; /* Green background */
+    border-radius: 50%;
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider-title, .slider-value{
+    color: #CF9FFF;
+    font-size: 20px;
+    font-family: "Fira Sans", sans-serif;
+    margin: 7px;
 }
 
 /*remove thick border of colour picker*/
 input[type="color"] {
     -webkit-appearance: none;
     border: none;
+    box-shadow: 4px 4px 5px #898989;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
@@ -134,4 +182,3 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
     border: none;
 }
-
