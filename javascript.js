@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid-container");
 let currSize = 30; //for now
+let colour = "black";
 
 function createGrid(size){ //size is width/height of each box
     if(size>100){
@@ -21,7 +22,7 @@ function createGrid(size){ //size is width/height of each box
             const gridElement = document.createElement("div");
             gridElement.classList.add("grid-square");
             gridElement.style.padding = paddingStr;
-            gridElement.addEventListener("mouseover", ()=>{gridElement.style.backgroundColor="black"});
+            gridElement.addEventListener("mouseover", ()=>{gridElement.style.backgroundColor=colour});
             rowContainer.appendChild(gridElement);
         }
     }
@@ -32,7 +33,20 @@ function clearGrid(){
     gridBoxes.forEach((box) => {box.style.backgroundColor = "white";});
 }
 
+function changeColour(){
+    colour = document.querySelector(".pencolour-box").value;
+}
+
 const clearBtn = document.querySelector(".clear-btn");
 clearBtn.addEventListener("click", clearGrid)
+
+const colourPicker = document.querySelector(".pencolour-box");
+colourPicker.addEventListener("input", changeColour);
+
+const eraserBtn = document.querySelector(".eraser-btn");
+eraserBtn.addEventListener("click", ()=>{colour = "white";});
+
+const colourBtn = document.querySelector(".colour-btn");
+colourBtn.addEventListener("click", changeColour);
 
 createGrid(currSize);
