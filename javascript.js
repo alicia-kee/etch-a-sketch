@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid-container");
-let currSize = 50; //for now
+let currSize = 30; //for now
 
 function createGrid(size){ //size is width/height of each box
     if(size>100){

@@ -1,13 +1,44 @@
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
+    margin:0;
 }
 
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(170, 235, 255);
+}
+
+.header-title{
+    font-size: 45px;
+    margin: 7px;
+    font-family: "Ultra", sans-serif;
+    color: rgb(111, 111, 252);
+}
+
+.header-text{
+    font-size: 25px;
+    font-family: "Fira Sans", sans-serif;
+    color: rgb(111, 111, 252);
+}
+
+.body-container{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+/*grid things:*/
 .grid-container{
     width: 500px;
     height: 500px;
     border: 30px solid rgb(124, 219, 251);
+    box-shadow: 4px 4px 10px #898989;
 
     display:flex;
     flex-wrap: wrap;
@@ -29,3 +60,26 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+/*end grid things*/
+.clear-btn{
+    background-color:  rgb(111, 111, 252);
+    width: 100px;
+    height: 70px;
+    border: 5px solid blueviolet;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    font-family: "Fira Sans", sans-serif;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color:  rgb(163, 163, 249);
+}
+
+button{
+    box-shadow: 4px 4px 10px #898989;
+    margin: 40px;
+}
+
