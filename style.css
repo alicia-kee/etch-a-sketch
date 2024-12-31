@@ -96,6 +96,11 @@ button{
     font-family: "Fira Sans", sans-serif;
 }
 
+.colour-btn{
+    background-color: #CF9FFF;
+    color: #5e5e5e;
+}
+
 .pencolour-container{
     display: flex;
     align-items: center;

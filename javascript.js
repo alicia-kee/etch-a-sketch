@@ -37,6 +37,25 @@ function changeColour(){
     colour = document.querySelector(".pencolour-box").value;
 }
 
+function switchToEraser(){
+    colour = "white";
+    eraserBtn.style.color = "#5e5e5e";
+    eraserBtn.style.backgroundColor = "#CF9FFF";
+
+    colourBtn.style.color = "#CF9FFF";
+    colourBtn.style.backgroundColor = "#5e5e5e";
+}
+
+function switchToColour(){
+    changeColour();
+
+    colourBtn.style.color = "#5e5e5e";
+    colourBtn.style.backgroundColor = "#CF9FFF";
+
+    eraserBtn.style.color = "#CF9FFF";
+    eraserBtn.style.backgroundColor = "#5e5e5e";
+}
+
 const clearBtn = document.querySelector(".clear-btn");
 clearBtn.addEventListener("click", clearGrid)
 
@@ -44,9 +63,9 @@ const colourPicker = document.querySelector(".pencolour-box");
 colourPicker.addEventListener("input", changeColour);
 
 const eraserBtn = document.querySelector(".eraser-btn");
-eraserBtn.addEventListener("click", ()=>{colour = "white";});
+eraserBtn.addEventListener("click", switchToEraser);
 
 const colourBtn = document.querySelector(".colour-btn");
-colourBtn.addEventListener("click", changeColour);
+colourBtn.addEventListener("click", switchToColour);
 
 createGrid(currSize);
