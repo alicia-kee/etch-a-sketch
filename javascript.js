@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid-container");
 let currSize = 20; //default
 let colour = "black"; //default
+let rainbowMode = false; //default
 
 function createGrid(){ //size is width/height of each box
     if(currSize>100){
@@ -25,10 +26,21 @@ function createGrid(){ //size is width/height of each box
             const gridElement = document.createElement("div");
             gridElement.classList.add("grid-square");
             gridElement.style.padding = paddingStr;
-            gridElement.addEventListener("mouseover", ()=>{gridElement.style.backgroundColor=colour});
+
+            gridElement.addEventListener("mouseover", ()=>{gridElement.style.backgroundColor=getColour()});
             rowContainer.appendChild(gridElement);
         }
     }
+}
+
+function getColour(){
+    let currColour;
+    if(rainbowMode){
+        currColour = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }else{
+        currColour = colour;
+    }
+    return currColour;
 }
 
 function clearGrid(){
@@ -41,15 +53,20 @@ function changeColour(){
 }
 
 function switchToEraser(){
+    rainbowMode = false;
     colour = "white";
+
     eraserBtn.style.color = "#5e5e5e";
     eraserBtn.style.backgroundColor = "#CF9FFF";
 
     colourBtn.style.color = "#CF9FFF";
     colourBtn.style.backgroundColor = "#5e5e5e";
+    rainbowBtn.style.color = "#CF9FFF";
+    rainbowBtn.style.backgroundColor = "#5e5e5e";
 }
 
 function switchToColour(){
+    rainbowMode = false;
     changeColour();
 
     colourBtn.style.color = "#5e5e5e";
@@ -57,13 +74,25 @@ function switchToColour(){
 
     eraserBtn.style.color = "#CF9FFF";
     eraserBtn.style.backgroundColor = "#5e5e5e";
+    rainbowBtn.style.color = "#CF9FFF";
+    rainbowBtn.style.backgroundColor = "#5e5e5e";
 }
 
 function changeSize(){
     currSize = sizePicker.value;
     createGrid();
+}
 
+function switchToRainbow(){
+    rainbowBtn.style.color = "#5e5e5e";
+    rainbowBtn.style.backgroundColor = "#CF9FFF";
 
+    eraserBtn.style.color = "#CF9FFF";
+    eraserBtn.style.backgroundColor = "#5e5e5e";
+    colourBtn.style.color = "#CF9FFF";
+    colourBtn.style.backgroundColor = "#5e5e5e";
+
+    rainbowMode = true;
 }
 
 const clearBtn = document.querySelector(".clear-btn");
@@ -81,5 +110,8 @@ colourBtn.addEventListener("click", switchToColour);
 const sizePicker = document.querySelector(".slider");
 sizePicker.addEventListener("input", changeSize);
 const sizeText = document.querySelector(".slider-value");
+
+const rainbowBtn = document.querySelector(".rainbow-btn");
+rainbowBtn.addEventListener("click", switchToRainbow)
 
 createGrid(currSize);
