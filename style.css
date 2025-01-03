@@ -38,10 +38,16 @@ body{
     height: 50px;
     background-color: #5e5e5e;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Fira Sans", sans-serif;
     color: black;
+    padding: 20px;
+}
+.attribute{
+    font-size: 8px;
+    margin-top: 8px;
 }
 
 /*grid things:*/
